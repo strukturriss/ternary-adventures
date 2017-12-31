@@ -1,0 +1,18 @@
+//A ternary adder for two numbers
+
+function terAdd(input1,input2) {
+//The numbers must, as of yet, be input as an array each
+var addArr = [];
+for (i=input1.length; i>0; i--) {
+//creating as many empty arrays as are necessary to do each trigit
+addArr.push([]);
+}
+for (j=0; j<input1.length; j++) {
+//storing the values in those arrays
+addArr[j].push(input1[j],input2[j]);
+}
+//and here, the actual addition with carry would take place, but I'll call it a day for now
+return addArr;
+}
+
+terAdd([1,4,5],[2,3])
