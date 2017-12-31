@@ -1,0 +1,14 @@
+//This is a ternary-to-decimal converter
+
+function terDec (input) {
+var inputArr = Array.from(arguments);
+var targetArr = [];
+for (i=inputArr.length-1; i>=0; i--) {
+targetArr.push(Math.pow(3,i)*inputArr[i]);
+}
+return targetArr.reduce(function reduce(a,b){
+return a+=b;
+});
+}
+
+terDec (1,1,0,1,-1,0,-1,1)
