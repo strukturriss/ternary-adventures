@@ -1,18 +1,35 @@
-//A ternary adder for two numbers
+//An adder for two ternary numbers
 
 function terAdd(input1,input2) {
-//The numbers must, as of yet, be input as an array each
+
 var addArr = [];
-for (i=input1.length; i>0; i--) {
-//creating as many empty arrays as are necessary to do each trigit
-addArr.push([]);
+var result;
+
+//Making the arrays equal in length
+if (input2.length < input1.length) {
+//reversing the arrays
 }
+for (k=0;k<=input1.length-input2.length;k++)
+input2.unshift(0);
+
+//Creating the carry
+function calc(one,two) {
+if (one !== two) {
+result = one+two;
+} else if (one == 1) {
+result = [1,1];
+} else if (one == -1) {
+result = [-1,1];
+}
+}
+
+//The actual calculation
 for (j=0; j<input1.length; j++) {
-//storing the values in those arrays
-addArr[j].push(input1[j],input2[j]);
+calc(input1[j],input2[j]);
+addArr.push(result);
 }
-//and here, the actual addition with carry would take place, but I'll call it a day for now
+
 return addArr;
 }
 
-terAdd([1,4,5],[2,3])
+terAdd([-1,1,0],[1,-1,-1,1])
