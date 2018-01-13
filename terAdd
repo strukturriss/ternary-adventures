@@ -32,7 +32,7 @@ addArr.push(result);
 //final concatenation
 var finalArr=[];
 for (n=0; n<addArr.length-1; n++) {
-if (addArr[n+1].isArray() == true) {
+if (Array.isArray(addArr[n+1]) == true) {
 finalArr.push(addArr[n]+addArr[n+1][0]);
 finalArr.push(addArr[n+1][1]);
 } else {
