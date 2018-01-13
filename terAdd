@@ -29,7 +29,18 @@ calc(input1[j],input2[j]);
 addArr.push(result);
 }
 
-return addArr;
+//final concatenation
+var finalArr=[];
+for (n=0; n<addArr.length-1; n++) {
+if (addArr[n+1].isArray() == true) {
+finalArr.push(addArr[n]+addArr[n+1][0]);
+finalArr.push(addArr[n+1][1]);
+} else {
+finalArr.push(addArr[n]);
+}
+}
+
+return finalArr;
 }
 
 terAdd([-1,1,0],[1,-1,-1,1])
