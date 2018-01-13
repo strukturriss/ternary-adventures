@@ -3,14 +3,16 @@
 function terAdd(input1,input2) {
 
 var addArr = [];
+var finalArr = [];
 var result;
 
 //Making the arrays equal in length
 if (input2.length < input1.length) {
 //reversing the arrays
 }
-for (k=0;k<=input1.length-input2.length;k++)
-input2.unshift(0);
+for (k=0;k<=input1.length-input2.length;k++){
+input1.push(0);
+}
 
 //Creating the carry
 function calc(one,two) {
@@ -28,9 +30,9 @@ for (j=0; j<input1.length; j++) {
 calc(input1[j],input2[j]);
 addArr.push(result);
 }
+return addArr;
 
 //final concatenation
-var finalArr=[];
 for (n=0; n<addArr.length-1; n++) {
 if (Array.isArray(addArr[n+1]) == true) {
 finalArr.push(addArr[n]+addArr[n+1][0]);
