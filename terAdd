@@ -8,11 +8,12 @@ var result;
 
 //Making the arrays equal in length
 if (input2.length < input1.length) {
-//reversing the arrays
-}
-for (k=0;k<=input1.length-input2.length;k++){
-input1.push(0);
-}
+for (k=0; k=(input1.length-input2.length); k++){
+input1.unshift(0);
+}} else {
+for (k=0; k=(input2.length-input1.length); k++){
+input1.unshift(0);
+}}
 
 //Creating the carry
 function calc(one,two) {
@@ -22,25 +23,22 @@ result = one+two;
 result = [1,1];
 } else if (one == -1) {
 result = [-1,1];
-}
-}
+}}
 
 //The actual calculation
 for (j=0; j<input1.length; j++) {
 calc(input1[j],input2[j]);
 addArr.push(result);
 }
-return addArr;
 
 //final concatenation
-for (n=0; n<addArr.length-1; n++) {
-if (Array.isArray(addArr[n+1]) == true) {
-finalArr.push(addArr[n]+addArr[n+1][0]);
-finalArr.push(addArr[n+1][1]);
+for (n=addArr.length; n>0; n--) {
+if (Array.isArray(addArr[n-1]) == true) {
+finalArr.push(addArr[n]+addArr[n-1][0]);
+finalArr.push(addArr[n-1][1]);
 } else {
 finalArr.push(addArr[n]);
-}
-}
+}}
 
 return finalArr;
 }
